@@ -11,7 +11,9 @@ public class Main {
 //		helloWorld.setName("atguigu");
 		//1.创建Spring的IOC容器
 		//ApplicationContext代表IOC容器
+		
 		//ClassPathXmlApplicationContext：是ApplicationContext接口的实现类，该实现类从类路径下加载xml配置文件
+		
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 		//2.从IOC容器中获取Bean实例
 		//利用id定位到IOC容器中的bean
@@ -23,7 +25,6 @@ public class Main {
 		System.out.println(car.toString());
 		
 		car = (Car) ctx.getBean("car2");
-		
 		System.out.println(car.toString());
 	}
 }
