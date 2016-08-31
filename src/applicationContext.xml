@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+		配置Bean 
+		class：bean的全类名，通过反射的方式在IOC容器中创建Bean，所以要求Bean 中必须有无参数的构造器
+		id：标识容器中的bean，id唯一。
+	-->
+	<bean id="helloWorld" class="com.atguigu.spring.beans.HelloWorld">
+		<property name="name2" value="Spring"></property>
+	</bean>
+	<bean id="car" class="com.atguigu.spring.beans.Car">
+		<constructor-arg value="Audi" index="0"></constructor-arg>
+		<constructor-arg value="Shanghai" index="1"></constructor-arg>
+		<constructor-arg value="300000" type="double"></constructor-arg>
+	</bean>
+	
+	<bean id="car2" class="com.atguigu.spring.beans.Car">
+		<constructor-arg value="Baoma" type="String"></constructor-arg>
+		<constructor-arg value="Beijing" type="String"></constructor-arg>
+		<constructor-arg value="240" type="int"></constructor-arg>
+	</bean>
+</beans>
