@@ -11,9 +11,14 @@
 	<bean id="helloWorld" class="com.atguigu.spring.beans.HelloWorld">
 		<property name="name2" value="Spring"></property>
 	</bean>
+	<!-- 使用构造器注入属性值可以指定参数的位置和参数的类型，以区分重载构造器！ -->
 	<bean id="car" class="com.atguigu.spring.beans.Car">
 		<constructor-arg value="Audi" index="0"></constructor-arg>
-		<constructor-arg value="Shanghai" index="1"></constructor-arg>
+		<constructor-arg index="1">
+		<!-- 如果字面值包含特殊字符可以用<![CDATA[]]>包裹起来 -->
+		<!-- 属性值可以用value字节点进行配置 -->
+			<value><![CDATA[<Shanghai^>]]></value>
+		</constructor-arg>
 		<constructor-arg value="300000" type="double"></constructor-arg>
 	</bean>
 	
