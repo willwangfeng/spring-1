@@ -25,6 +25,14 @@
 	<bean id="car2" class="com.atguigu.spring.beans.Car">
 		<constructor-arg value="Baoma" type="String"></constructor-arg>
 		<constructor-arg value="Beijing" type="String"></constructor-arg>
-		<constructor-arg value="240" type="int"></constructor-arg>
+		<constructor-arg type="int">
+			<value>250</value>
+		</constructor-arg>
+	</bean>
+	<!-- 可以使用property的ref属性建立bean之间的引用关系 -->
+	<bean id="person" class="com.atguigu.spring.beans.Person">
+		<property name="name" value="Tom"></property>
+		<property name="age" value="25"></property>
+		<property name="car" ref="car2"></property>
 	</bean>
 </beans>
